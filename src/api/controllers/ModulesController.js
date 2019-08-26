@@ -1,20 +1,19 @@
 import 'dotenv/config';
-const request = require("request");
 const generateToken = require("../student/generateToken");
-const studentInfo = require("../student/studentInfo");
+const getModules = require("../student/getModules");
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 module.exports = {
-    getstudentinfo: (req, res) => {
+    getModules: (req, res) => {
         generateToken((result, err) => {
             if (!err && result) {
                 let accessToken = result.access_token;
-                let studentId = 'stu01';
-                studentInfo(accessToken, studentId, (result, err) => {
+                let moduleCode = 'A101';
+                let semesterCode = '9011';
+                getModules(accessToken, moduleCode, semesterCode, (result, err) => {
                     if (!err && result) res.json(result);
-                })
+                });
             }
         });
     }
-
 }
