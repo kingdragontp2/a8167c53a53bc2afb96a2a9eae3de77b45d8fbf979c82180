@@ -1,5 +1,5 @@
 const generateToken = require("../student/generateToken");
-const attendance = require("../student/Attendance");
+const attendance = require("../student/getAttendance");
 
 module.exports = {
     getAttendance: (req, res) => {
@@ -17,5 +17,3 @@ module.exports = {
     }
 
 }
-
-
