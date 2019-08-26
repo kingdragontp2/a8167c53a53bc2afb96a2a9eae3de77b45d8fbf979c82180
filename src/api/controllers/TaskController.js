@@ -1,6 +1,6 @@
 const generateToken = require("../student/generateToken");
 const getAllTasks = require("../student/getAllTasks");
-const studentInfo = require("../student/studentInfo");
+const getATask = require("../student/getATask");
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
@@ -24,7 +24,7 @@ module.exports = {
             if (!err && result) {
                 let accessToken = result.access_token;
                 let studentId = 'stu01';
-                studentInfo(accessToken, studentId, (result, err) => {
+                getATask(accessToken, studentId, (result, err) => {
                     if (!err && result) res.json(result);
                 })
             }

@@ -1,5 +1,5 @@
 const scheduleController = require("./controllers/ScheduleController");
-const AttendanceController = require("./controllers/AttendanceController");
+const attendanceController = require("./controllers/AttendanceController");
 const modulesController = require("./controllers/ModulesController");
 const taskController = require("./controllers/TaskController");
 const cors = require('cors');
@@ -14,7 +14,7 @@ module.exports = (app) => {
         .get(modulesController.getModules);
 
     app.route('/attendance')
-        .get(AttendanceController.getAttendance);
+        .get(attendanceController.getAttendance);
 
     app.route('/allTasks')
         .get(taskController.getAll);
