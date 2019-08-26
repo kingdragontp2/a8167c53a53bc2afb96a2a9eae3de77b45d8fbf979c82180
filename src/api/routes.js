@@ -1,5 +1,6 @@
 const studentController = require("./controllers/StudentController");
 const scheduleController = require("./controllers/ScheduleController");
+const modulesController = require("./controllers/ModulesController");
 const cors = require('cors');
 
 module.exports = (app) => {
@@ -9,4 +10,7 @@ module.exports = (app) => {
 
     app.route('/schedule')
         .get(scheduleController.get);
+
+    app.route('/modules')
+        .get(modulesController.getModules);
 };
