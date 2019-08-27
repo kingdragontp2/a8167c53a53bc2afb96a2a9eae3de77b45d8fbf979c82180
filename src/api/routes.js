@@ -3,7 +3,6 @@ const attendanceController = require("./controllers/AttendanceController");
 const modulesController = require("./controllers/ModulesController");
 const taskController = require("./controllers/TaskController");
 const subComponentController = require("./controllers/SubComponentController");
-const subComponentGradeController = require("./controllers/SubComponentGradeController");
 
 const cors = require('cors');
 
@@ -30,6 +29,6 @@ module.exports = (app) => {
         .get(subComponentController.getSC);
 
     app.route('/subComponentGrade')
-        .get(subComponentGradeController.getSCG);
+        .get(subComponentController.getSCG);
 
 };
