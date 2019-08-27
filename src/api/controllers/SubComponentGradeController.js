@@ -1,17 +1,16 @@
+const getSubComponentGrade = require("../student/getSubComponentGrade");
 const generateToken = require("../student/generateToken");
-const getModules = require("../student/getModules");
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 module.exports = {
-    getModules: (req, res) => {
+    getSCG: (req, res) => {
         generateToken((result, err) => {
-            if (!err && result) {
+            if (result && !err) {
                 let accessToken = result.access_token;
-                let moduleCode = 'A101';
-                let semesterCode = '9011';
-                getModules(accessToken, moduleCode, semesterCode, (result, err) => {
+                let moduleId = '5be1e097-1862-e711-80e2-00155db2798e';
+                getSubComponentGrade(accessToken, moduleId, (result, err) => {
                     if (!err && result) res.json(result);
-                });
+                })
             }
         });
     }

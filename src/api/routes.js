@@ -2,6 +2,9 @@ const scheduleController = require("./controllers/ScheduleController");
 const attendanceController = require("./controllers/AttendanceController");
 const modulesController = require("./controllers/ModulesController");
 const taskController = require("./controllers/TaskController");
+const subComponentController = require("./controllers/SubComponentController");
+const subComponentGradeController = require("./controllers/SubComponentGradeController");
+
 const cors = require('cors');
 
 module.exports = (app) => {
@@ -21,4 +24,12 @@ module.exports = (app) => {
 
     app.route('/task')
         .get(taskController.getOne);
+
+
+    app.route('/subComponent')
+        .get(subComponentController.getSC);
+
+    app.route('/subComponentGrade')
+        .get(subComponentGradeController.getSCG);
+
 };
