@@ -7,7 +7,7 @@ module.exports = {
         generateToken((result, err) => {
             if (!err && result) {
                 let accessToken = result.access_token;
-                let studentId = 'stu02';// will change
+                let studentId = 'stu02';// will change in the future
                 let startTime = "02/09/2010 00:00:00";
                 let endTime = "06/09/2029 00:00:00";
 
