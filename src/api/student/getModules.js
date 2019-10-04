@@ -7,13 +7,6 @@ module.exports = (accessToken, moduleCode, semesterCode, cb) => {
         url: 'https://myleo.rp.edu.sg/learningpath/api/modules',
         qs: { moduleCode: moduleCode, semesterCode: semesterCode },
         headers: {
-            'cache-control': 'no-cache',
-            Connection: 'keep-alive',
-            'Accept-Encoding': 'gzip, deflate',
-            Cookie: 'BIGipServerLMS-LAMS-PROD_new_pool=369630892.47873.0000',
-            Host: 'myleo.rp.edu.sg',
-            'Cache-Control': 'no-cache',
-            Accept: '*/*',
             Authorization: `Bearer ${accessToken}`
         }
     };

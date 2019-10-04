@@ -8,13 +8,6 @@ module.exports = (accessToken, studentId, cb) => {
         qs: { studentId: studentId },
         headers:
         {
-            'cache-control': 'no-cache',
-            Connection: 'keep-alive',
-            'Content-Length': '449',
-            'Accept-Encoding': 'gzip, deflate',
-            Host: 'myleo-uat.rp.edu.sg',
-            'Cache-Control': 'no-cache',
-            Accept: '*/*',
             Authorization: `Bearer ${accessToken}`
         },
         formData:

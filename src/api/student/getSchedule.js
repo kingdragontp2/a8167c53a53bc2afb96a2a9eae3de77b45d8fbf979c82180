@@ -13,13 +13,6 @@ module.exports = (accessToken, studentId, startTime, endTime, cb) => {
         },
         headers:
         {
-            'cache-control': 'no-cache',
-            Connection: 'keep-alive',
-            'Content-Length': '449',
-            'Accept-Encoding': 'gzip, deflate',
-            Host: 'myleo.rp.edu.sg',
-            'Cache-Control': 'no-cache',
-            Accept: '*/*',
             Authorization: `Bearer ${accessToken}`
         },
         formData:
@@ -29,10 +22,11 @@ module.exports = (accessToken, studentId, startTime, endTime, cb) => {
             client_secret: process.env.CLIENT_SECRET
         }
     };
-
     return request(options, (error, response, body) => {
+        console.log(response);
+        console.log(error)
         if (!error) {
-            let result = JSON.parse(body)
+            let result = JSON.parse(body);
             cb(result, null);
         } else {
             cb(null, error);

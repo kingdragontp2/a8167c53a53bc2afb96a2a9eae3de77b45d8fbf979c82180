@@ -14,12 +14,6 @@ module.exports = (accessToken, studentId, startTime, endTime, cb) => {
         },
         headers:
         {
-            'cache-control': 'no-cache',
-            Connection: 'keep-alive',
-            'accept-encoding': 'gzip, deflate',
-            Host: 'myleo.rp.edu.sg',
-            'Cache-Control': 'no-cache',
-            Accept: '*/*',
             Authorization: `Bearer ${accessToken}`
         },
         // formData:
