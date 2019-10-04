@@ -23,8 +23,6 @@ module.exports = (accessToken, studentId, startTime, endTime, cb) => {
         }
     };
     return request(options, (error, response, body) => {
-        console.log(response);
-        console.log(error)
         if (!error) {
             let result = JSON.parse(body);
             cb(result, null);
